@@ -1,0 +1,34 @@
+// Contador de palavras de um string
+// Gabriel Russi
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main()
+{
+    char texto[200];
+    int i = 0, palavras  = 0, em_palavra =0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    while(texto[i] != '\0')
+    {
+        if((texto[i] != ' ') && (texto[i]!= '\n') && (em_palavra==0))
+        {
+            em_palavra = 1;
+            palavras++;
+        } else if(texto[i] == ' ' || texto[i] == '\n ') {
+            em_palavra = 0;
+        }
+        i++;
+    }
+
+    printf("Quantidade de palavras: %d\n", palavras);
+
+    return 0;
+}
+
