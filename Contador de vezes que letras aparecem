@@ -1,0 +1,33 @@
+// Contador de quantas vezes uma letra aparece em um string
+// Gabriel Russi
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main()
+{
+    char texto[200], letra;
+    int i = 0, contador = 0;
+
+    printf("Digite um texto: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    printf("Digite a letra para contar: ");
+    scanf("%c", &letra);
+
+    while(texto[i] != '\0')
+    {
+        if(texto[i] == letra)
+        {
+            contador++;
+
+        }
+        i++;
+    }
+    printf("Quantidade de letras na frase: %d\n", contador);
+
+        return 0;
+
+    }
