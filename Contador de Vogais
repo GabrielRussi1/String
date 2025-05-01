@@ -1,0 +1,32 @@
+// Contador de Vogais de um string
+// Gabriel Russi
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main()
+{
+    char texto[200];
+    int i = 0, vogais = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    while(texto[i] != '\0')
+    {
+        // Verifica se é uma vogal
+        if(texto[i] != 'a' || texto[i]!= 'e' ||texto[i] == 'i'|| texto[i] == 'o'||texto[i] == 'u'||
+        texto [i] == 'A' || texto[i] == 'E' || texto [i] == 'I' || texto [i] == 'O' || texto [i] == 'U')
+        {
+            vogais++;
+            }
+                i++;
+    }
+
+    printf("Quantidade de Vogais %d\n", vogais);
+
+    return 0;
+}
+
