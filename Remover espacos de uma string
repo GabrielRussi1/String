@@ -1,0 +1,25 @@
+// Remover espacos de uma string
+// Gabriel Russi
+
+#include <stdio.h>
+
+int main() {
+    char texto[200], resultado[200];
+    int i = 0, j = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    while (texto[i] != '\0') {
+        if (texto[i] != ' ') {
+            resultado[j] = texto[i];
+            j++;
+        }
+        i++;
+    }
+
+    resultado[j] = '\0'; // Adiciona o caractere nulo ao final da string
+    printf("String sem espacos: %s\n", resultado);
+
+    return 0;
+}
