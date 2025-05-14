@@ -1,0 +1,18 @@
+// Ler e exibir uma string
+// Gabriel Russi
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char texto[200];
+
+    printf("Digite uma string: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    printf("String digitada: %s", texto);
+
+    return 0;
+}
