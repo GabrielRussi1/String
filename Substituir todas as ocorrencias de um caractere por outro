@@ -1,0 +1,31 @@
+// Substituir todas as ocorrencias de um caractere por outro
+// Gabriel Russi
+
+#include <stdio.h>
+
+int main() {
+    char texto[200], antigo, novo;
+    int i = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    printf("Digite o caractere que deseja substituir: ");
+    scanf("%c", &antigo);
+
+    getchar(); // Limpa o buffer do teclado
+
+    printf("Digite o novo caractere: ");
+    scanf("%c", &novo);
+
+    while (texto[i] != '\0') {
+        if (texto[i] == antigo) {
+            texto[i] = novo;
+        }
+        i++;
+    }
+
+    printf("Texto com substituicoes: %s\n", texto);
+
+    return 0;
+}
