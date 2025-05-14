@@ -1,0 +1,26 @@
+// Copiar uma string para outra
+// Gabriel Russi
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char origem[200], destino[200];
+    int i = 0;
+
+    printf("Digite uma frase: ");
+    fgets(origem, sizeof(origem), stdin);
+
+    while(origem[i] != '\0')
+    {
+        destino[i] = origem[i];
+        i++;
+    }
+    destino[i] = '\0';
+
+    printf("String copiada: %s", destino);
+
+    return 0;
+}
