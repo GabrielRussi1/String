@@ -1,0 +1,36 @@
+// Dividir uma string em palavras e exibir cada palavra
+// Gabriel Russi
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char texto[200];
+    char palavra[50];
+    int i = 0, j = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    printf("As palavras sao:\n");
+
+    while (texto[i] != '\0') {
+        if (texto[i] != ' ' && texto[i] != '\n') {
+            palavra[j] = texto[i];
+            j++;
+        } else if (j > 0) {
+            palavra[j] = '\0';
+            printf("%s\n", palavra);
+            j = 0;
+        }
+        i++;
+    }
+
+    if (j > 0) {
+        palavra[j] = '\0';
+        printf("%s\n", palavra);
+    }
+
+    return 0;
+}
