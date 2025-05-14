@@ -1,0 +1,27 @@
+// Verificar se uma palavra existe dentro de uma frase
+// Gabriel Russi
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char frase[200], palavra[50];
+
+    printf("Digite uma frase: ");
+    fgets(frase, sizeof(frase), stdin);
+
+    printf("Digite a palavra a ser buscada: ");
+    fgets(palavra, sizeof(palavra), stdin);
+
+    // Remover o caractere de nova linha da entrada da frase e da palavra
+    frase[strcspn(frase, "\n")] = '\0';
+    palavra[strcspn(palavra, "\n")] = '\0';
+
+    if (strstr(frase, palavra) != NULL) {
+        printf("A palavra '%s' existe na frase.\n", palavra);
+    } else {
+        printf("A palavra '%s' nao foi encontrada na frase.\n", palavra);
+    }
+
+    return 0;
+}
