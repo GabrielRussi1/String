@@ -1,0 +1,28 @@
+// Conversor de string para maiusculas
+// Gabriel Russi
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    char texto[200];
+    int i = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    while(texto[i] != '\0')
+    {
+        if(texto[i] >= 'a' && texto[i] <= 'z')
+        {
+            texto[i] = texto[i] - 32;
+        }
+        i++;
+    }
+
+    printf("String em maiusculas: %s", texto);
+
+    return 0;
+}
