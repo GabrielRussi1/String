@@ -1,0 +1,30 @@
+// Contar letras minusculas, maiusculas e digitos separadamente
+// Gabriel Russi
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char texto[200];
+    int i = 0, minusculas = 0, maiusculas = 0, digitos = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    while (texto[i] != '\0') {
+        if (islower(texto[i])) {
+            minusculas++;
+        } else if (isupper(texto[i])) {
+            maiusculas++;
+        } else if (isdigit(texto[i])) {
+            digitos++;
+        }
+        i++;
+    }
+
+    printf("Letras minusculas: %d\n", minusculas);
+    printf("Letras maiusculas: %d\n", maiusculas);
+    printf("Digitos: %d\n", digitos);
+
+    return 0;
+}
