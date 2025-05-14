@@ -1,0 +1,14 @@
+// Testando função atoi
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+int main()
+{
+    char minhaStringDouble[4] = "50";
+    int i = atof(minhaStringDouble);
+    printf("A soma de %d com 10 resulta em %d\'",i,i+10);
+}
