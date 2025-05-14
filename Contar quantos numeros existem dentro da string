@@ -1,0 +1,24 @@
+// Contar quantos numeros existem dentro da string
+// Gabriel Russi
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char texto[200];
+    int i = 0, contagem = 0;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    while (texto[i] != '\0') {
+        if (isdigit(texto[i])) {
+            contagem++;
+        }
+        i++;
+    }
+
+    printf("A quantidade de numeros na string e: %d\n", contagem);
+
+    return 0;
+}
