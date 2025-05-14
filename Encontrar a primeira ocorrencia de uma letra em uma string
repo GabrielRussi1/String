@@ -1,0 +1,31 @@
+// Encontrar a primeira ocorrencia de uma letra em uma string
+// Gabriel Russi
+
+#include <stdio.h>
+
+int main() {
+    char texto[200], letra;
+    int i = 0, posicao = -1;
+
+    printf("Digite uma frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    printf("Digite a letra que deseja buscar: ");
+    scanf("%c", &letra);
+
+    while (texto[i] != '\0') {
+        if (texto[i] == letra) {
+            posicao = i;
+            break;
+        }
+        i++;
+    }
+
+    if (posicao != -1) {
+        printf("A primeira ocorrencia da letra '%c' esta na posicao %d\n", letra, posicao);
+    } else {
+        printf("A letra '%c' nao foi encontrada na string.\n", letra);
+    }
+
+    return 0;
+}
