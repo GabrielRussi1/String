@@ -1,0 +1,33 @@
+// Validar se a string e um numero inteiro
+// Gabriel Russi
+
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char texto[200];
+    int i = 0, valido = 1;
+
+    printf("Digite uma string para verificar se e um numero inteiro: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    if (texto[0] == '-' || texto[0] == '+') {
+        i = 1; // Se for negativo ou positivo, ignora o primeiro caractere
+    }
+
+    while (texto[i] != '\0' && texto[i] != '\n') {
+        if (!isdigit(texto[i])) {
+            valido = 0;
+            break;
+        }
+        i++;
+    }
+
+    if (valido) {
+        printf("A string e um numero inteiro.\n");
+    } else {
+        printf("A string nao e um numero inteiro.\n");
+    }
+
+    return 0;
+}
